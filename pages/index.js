@@ -3,12 +3,13 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header.js'
 import TopRated from '../Components/TopRated.js'
+import Script from 'next/script'
 
 export default function Home() {
   return (
     <div className={styles.container}>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossOrigin="anonymous"></script>
+        <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossOrigin="anonymous"></Script>
       <Head>
         <title>REDSKULL</title>
         <meta name="description" content="By Meer Tarbani" />
