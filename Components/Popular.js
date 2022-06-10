@@ -10,7 +10,7 @@ export default function Popular() {
     fetchData();
   }, []);
   function fetchData() {
-    fetch("https://imdb-api.com/en/API/MostPopularMovies/k_14badqbb")
+    fetch("https://imdb-api.com/en/API/MostPopularMovies/k_64lr2b56")
       .then((response) => response.json())
       .then((data) => {
         console.log(data.items[0].title);
@@ -20,7 +20,7 @@ export default function Popular() {
         console.log(error);
       });
 
-    fetch("https://imdb-api.com/en/API/MostPopularTVs/k_14badqbb")
+    fetch("https://imdb-api.com/en/API/MostPopularTVs/k_64lr2b56")
       .then((response) => response.json())
       .then((dataa) => {
           console.log(dataa);
@@ -37,7 +37,7 @@ export default function Popular() {
         <div className={styles.container} data-aos="fade-up">
           {/* <img src={Popular[0].image} className="card-img-top" alt="..." /> */}
           {Popular.map((item) => (
-            <div key={item} className={`card ${styles.card}`} data-aos="fade-up">
+            <div key={item} className={`card ${styles.card}`}>
               <img src={item.image} loading="lazy" className="card-img-top" alt="..." />
               <div className="card-body">
                 <p className={`card-text ${styles.cardtext}`}>{item.title}</p>

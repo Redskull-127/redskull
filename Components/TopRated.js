@@ -9,7 +9,7 @@ export default function TopRated() {
     fetchData();
   }, []);
   function fetchData() {
-    fetch("https://imdb-api.com/en/API/Top250Movies/k_14badqbb")
+    fetch("https://imdb-api.com/en/API/Top250Movies/k_64lr2b56")
       .then((response) => response.json())
       .then((data) => {
         console.log(data.items[0].title);
@@ -19,7 +19,7 @@ export default function TopRated() {
         console.log(error);
       });
 
-    fetch("https://imdb-api.com/en/API/Top250TVs/k_14badqbb")
+    fetch("https://imdb-api.com/en/API/Top250TVs/k_64lr2b56")
       .then((response) => response.json())
       .then((dataa) => {
           console.log(dataa);
@@ -36,7 +36,7 @@ export default function TopRated() {
         <div className={styles.container} data-aos="fade-up">
           {/* <img src={topRated[0].image} className="card-img-top" alt="..." /> */}
           {topRated.map((item) => (
-            <div key={item} data-aos="fade-up" className={`card ${styles.card}`}>
+            <div key={item} className={`card ${styles.card}`}>
               <img src={item.image} loading="lazy" className="card-img-top" alt="..." />
               <div className="card-body">
                 <p className={`card-text ${styles.cardtext}`}>{item.title}</p>
@@ -48,7 +48,7 @@ export default function TopRated() {
         <div className={styles.container} data-aos="fade-up">
           {/* <img src={topRated[0].image} className="card-img-top" alt="..." /> */}
           {topShows.map((item) => (
-            <div key={item} data-aos="fade-up" className={`card ${styles.card}`}>
+            <div key={item} className={`card ${styles.card}`}>
               <img src={item.image} loading="lazy" className="card-img-top" alt="..." />
               <div className="card-body">
                 <p className={`card-text ${styles.cardtext}`}>{item.title}</p>

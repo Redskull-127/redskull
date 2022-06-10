@@ -8,7 +8,7 @@ export default function InTheaters() {
     fetchData();
   }, []);
   function fetchData() {
-    fetch("https://imdb-api.com/en/API/InTheaters/k_14badqbb")
+    fetch("https://imdb-api.com/en/API/InTheaters/k_64lr2b56")
       .then((response) => response.json())
       .then((data) => {
         console.log(data.items[0].title);
@@ -25,7 +25,7 @@ export default function InTheaters() {
         <div className={styles.container} data-aos="fade-up">
           {/* <img src={Theater[0].image} className="card-img-top" alt="..." /> */}
           {Theater.map((item) => (
-            <div key={item} data-aos="fade-up" className={`card ${styles.card}`}>
+            <div key={item}  className={`card ${styles.card}`}>
               <img src={item.image} loading="lazy" className="card-img-top" alt="..." />
               <div className="card-body">
                 <p className={`card-text ${styles.cardtext}`}>{item.title}</p>

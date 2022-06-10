@@ -69,3 +69,15 @@
 .Theater ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+@media (max-width: 768px) {
+  .Theater .container {
+    margin: 50px 0px 90px 00px;
+    height: 700px;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 350px 350px;
+    overflow-y: scroll;
+  }
+}
