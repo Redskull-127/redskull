@@ -10,7 +10,7 @@ export default function Popular() {
     fetchData();
   }, []);
   function fetchData() {
-    fetch("https://imdb-api.com/en/API/MostPopularMovies/k_64lr2b56")
+    fetch("https://imdb-api.com/en/API/MostPopularMovies/k_aqil82o5")
       .then((response) => response.json())
       .then((data) => {
         console.log(data.items[0].title);
@@ -20,7 +20,7 @@ export default function Popular() {
         console.log(error);
       });
 
-    fetch("https://imdb-api.com/en/API/MostPopularTVs/k_64lr2b56")
+    fetch("https://imdb-api.com/en/API/MostPopularTVs/k_aqil82o5")
       .then((response) => response.json())
       .then((dataa) => {
           console.log(dataa);

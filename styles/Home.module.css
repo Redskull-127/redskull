@@ -133,6 +133,31 @@
   height: 250px;
 }
 
+.Header {
+  display: flex;
+  width: 100%;
+  background-color: rgb(24, 24, 24);
+  border-radius: 7px;
+  margin-top: 20px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 10px 10px 10px;
+}
+
+.Header .navHead .navHeading {
+  color: antiquewhite;
+  font-size: 40px;
+  font-family: "Kdam Thmor Pro", sans-serif;
+}
+
+.Header .navItems span {
+  cursor: pointer;
+  color: antiquewhite;
+  font-size: 20px;
+  font-family: "Kdam Thmor Pro", sans-serif;
+}
+
+
 @media (max-width: 768px) {
   .grid {
     width: 100%;
@@ -150,6 +175,25 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .Header {
+    display: flex;
+    width: 100%;
+    background-color: rgb(24, 24, 24);
+    border-radius: 7px;
+    margin-top: 20px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+  }
+  .Header .navHead .navHeading {
+    color: antiquewhite;
+    font-size: 30px;
+    font-family: "Kdam Thmor Pro", sans-serif;
+  }
+  .Header .navItems span {
+    display: none;
   }
 
 }

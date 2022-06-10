@@ -8,7 +8,7 @@ export default function Coming() {
       fetchData();
     }, []);
     function fetchData() {
-      fetch("https://imdb-api.com/en/API/ComingSoon/k_64lr2b56")
+      fetch("https://imdb-api.com/en/API/ComingSoon/k_aqil82o5")
         .then((response) => response.json())
         .then((data) => {
           console.log(data.items[0].title);
