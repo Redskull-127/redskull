@@ -1,42 +1,43 @@
-import styles from "../styles/TopRated.module.css";
-import react, { useEffect, useState } from "react";
+import styles from "../styles/Popular.module.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
-export default function TopRated() {
-  const [topRated, setTopRated] = useState([]);
-  const [topShows, setTopShows] = useState([]);
+import react, { useEffect, useState } from "react";
+
+export default function Popular() {
+  const [Popular, setPopular] = useState([]);
+  const [topPopular, setTopPopular] = useState([]);
   useEffect(() => {
     fetchData();
   }, []);
   function fetchData() {
-    fetch("https://imdb-api.com/en/API/Top250Movies/k_14badqbb")
+    fetch("https://imdb-api.com/en/API/MostPopularMovies/k_14badqbb")
       .then((response) => response.json())
       .then((data) => {
         console.log(data.items[0].title);
-        setTopRated(data.items);
+        setPopular(data.items);
       })
       .catch((error) => {
         console.log(error);
       });
 
-    fetch("https://imdb-api.com/en/API/Top250TVs/k_14badqbb")
+    fetch("https://imdb-api.com/en/API/MostPopularTVs/k_14badqbb")
       .then((response) => response.json())
       .then((dataa) => {
           console.log(dataa);
-        setTopShows(dataa.items);
+        setTopPopular(dataa.items);
       })
       .catch((error) => {
           console.log(error);
       });
   }
-  if (topRated.length > 0) {
+  if (Popular.length > 0) {
     return (
-      <div className={styles.TopRated} data-aos="fade-up">
-        <h1 className={styles.title} data-aos="fade-up">Top Rated Movies</h1>
+      <div className={styles.Popular} data-aos="fade-up">
+        <h1 className={styles.title} data-aos="fade-up">Most Popular Movies</h1>
         <div className={styles.container} data-aos="fade-up">
-          {/* <img src={topRated[0].image} className="card-img-top" alt="..." /> */}
-          {topRated.map((item) => (
-            <div key={item} data-aos="fade-up" className={`card ${styles.card}`}>
+          {/* <img src={Popular[0].image} className="card-img-top" alt="..." /> */}
+          {Popular.map((item) => (
+            <div key={item} className={`card ${styles.card}`} data-aos="fade-up">
               <img src={item.image} loading="lazy" className="card-img-top" alt="..." />
               <div className="card-body">
                 <p className={`card-text ${styles.cardtext}`}>{item.title}</p>
@@ -44,11 +45,11 @@ export default function TopRated() {
             </div>
           ))}
         </div>
-        <h1 className={styles.title} data-aos="fade-up">Top Rated TV Shows</h1>
+        <h1 className={styles.title} data-aos="fade-up">Most Popular TV Shows</h1>
         <div className={styles.container} data-aos="fade-up">
-          {/* <img src={topRated[0].image} className="card-img-top" alt="..." /> */}
-          {topShows.map((item) => (
-            <div key={item} data-aos="fade-up" className={`card ${styles.card}`}>
+          {/* <img src={Popular[0].image} className="card-img-top" alt="..." /> */}
+          {topPopular.map((item) => (
+            <div key={item} className={`card ${styles.card}`}>
               <img src={item.image} loading="lazy" className="card-img-top" alt="..." />
               <div className="card-body">
                 <p className={`card-text ${styles.cardtext}`}>{item.title}</p>
@@ -63,3 +64,4 @@ export default function TopRated() {
     return <div className={styles.load}>Loading...</div>
   }
 }
+

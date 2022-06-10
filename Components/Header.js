@@ -11,13 +11,19 @@ export default function Header() {
     return (
         <><div className={styles.Header}>
             <div className={styles.navItems}>
-                <span>Top Rated</span>
+                <span>Popular</span>
+            </div>
+            <div className={styles.navItems}>
+                <span>Coming Soon</span>
             </div>
             <div className={styles.navHead}>
                 <span className={styles.navHeading}>REDSKULL</span>
             </div>
             <div className={styles.navItems}>
-                <span>Popular</span>
+                <span>Top Rated</span>
+            </div>
+            <div className={styles.navItems}>
+                <span>In Theaters</span>
             </div>
         </div>
         <div className={styles.content}>

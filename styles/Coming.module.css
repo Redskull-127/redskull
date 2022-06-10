@@ -1,9 +1,9 @@
-.TopRated {
+.Coming {
   width: 100%;
   padding: 20px;
   border-radius: 7px;
   background-color: rgb(24, 24, 24);
-  height: 1700px;
+  height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,12 +11,12 @@
   margin-bottom: 75px;
 }
 
-.TopRated .title {
+.Coming .title {
   margin: 50px 0px 50px 0px;
   color: antiquewhite;
 }
 
-.TopRated .container {
+.Coming .container {
   margin: 50px 20px 90px 20px;
   height: 700px;
   width: 100%;
@@ -26,7 +26,7 @@
   overflow-y: scroll;
 }
 
-.TopRated .container .card {
+.Coming .container .card {
   margin-bottom: 20px;
   height: 17em;
   background-color: black;
@@ -34,12 +34,12 @@
   text-align: center;
 }
 
-.TopRated .container .card p {
+.Coming .container .card p {
   color: antiquewhite;
   font-family: "Kdam Thmor Pro", sans-serif;
 }
 
-.TopRated .container .card img {
+.Coming .container .card img {
   width: 100%;
   height: 200px;
 }
@@ -51,21 +51,21 @@
 }
 
 /* width */
-.TopRated ::-webkit-scrollbar {
+.Coming ::-webkit-scrollbar {
   width: 10px;
 }
 
 /* Track */
-.TopRated ::-webkit-scrollbar-track {
+.Coming ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
 /* Handle */
-.TopRated ::-webkit-scrollbar-thumb {
+.Coming ::-webkit-scrollbar-thumb {
   background: #888;
 }
 
 /* Handle on hover */
-.TopRated ::-webkit-scrollbar-thumb:hover {
+.Coming ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
