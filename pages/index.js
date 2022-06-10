@@ -13,20 +13,23 @@ import React, { useEffect, useState, Component } from "react";
 import * as Scroll from "react-scroll";
 import {
   Link,
-  Button,
-  Element,
-  Events,
   animateScroll as scroll,
-  scrollSpy,
-  scroller,
 } from "react-scroll";
+import { CustomCursor } from "react-svg-cursor";
+
 export default function Home() {
   const [Loader, setLoader] = useState(true);
+  const [device, setDevice] = useState(false);
   useEffect(() => {
     Aos.init({ duration: 1500 });
     setInterval(() => {
       setLoader(false);
     }, 7000);
+    var userAgent = navigator.userAgent.toLowerCase();
+    var Android = userAgent.indexOf("android") > -1;
+    if (Android) {
+      setDevice(true);
+    }
   }, []);
 
   if (Loader == false) {
@@ -36,6 +39,14 @@ export default function Home() {
 
   return (
     <>
+    <CustomCursor
+          component={"cursor.png"}
+          isDisabled={device}
+          width={50}
+          height={50}
+          zIndex={420}
+          transform="translate(-28%, -10%) rotateZ(0deg)"
+        />
       <div className={styles.preloader} id="preloader">
         <img src="lottlemovie.gif" />
         <h1>Waiting for Data...</h1>
@@ -91,7 +102,7 @@ export default function Home() {
         <Head>
           <title>REDSKULL</title>
           <meta name="description" content="By Meer Tarbani" />
-          <link rel="icon" href="lottlemovie.png" />
+          <link rel="icon" href="cursor.png" />
           <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
             rel="stylesheet"
