@@ -9,7 +9,7 @@ export default function TopRated() {
     fetchData();
   }, []);
   function fetchData() {
-    fetch("https://imdb-api.com/en/API/Top250Movies/k_aqil82o5")
+    fetch("https://imdb-api.com/en/API/Top250Movies/k_14badqbb")
       .then((response) => response.json())
       .then((data) => {
         console.log(data.items[0].title);
@@ -19,7 +19,7 @@ export default function TopRated() {
         console.log(error);
       });
 
-    fetch("https://imdb-api.com/en/API/Top250TVs/k_aqil82o5")
+    fetch("https://imdb-api.com/en/API/Top250TVs/k_14badqbb")
       .then((response) => response.json())
       .then((dataa) => {
           console.log(dataa);
@@ -29,6 +29,10 @@ export default function TopRated() {
           console.log(error);
       });
   }
+  function download(name) {
+    const newName = name.split(" ").join("+");
+    window.open(`https://themoviesverse.co/?s=${newName}`);
+  }
   if (topRated.length > 0) {
     return (
       <div className={styles.TopRated} data-aos="fade-up">
@@ -36,7 +40,7 @@ export default function TopRated() {
         <div className={styles.container} data-aos="fade-up">
           {/* <img src={topRated[0].image} className="card-img-top" alt="..." /> */}
           {topRated.map((item) => (
-            <div key={item} className={`card ${styles.card}`}>
+            <div key={item} className={`card ${styles.card}`} onClick={() => download(item.title)}>
               <img src={item.image} loading="lazy" className="card-img-top" alt="..." />
               <div className="card-body">
                 <p className={`card-text ${styles.cardtext}`}>{item.title}</p>
@@ -48,7 +52,7 @@ export default function TopRated() {
         <div className={styles.container} data-aos="fade-up">
           {/* <img src={topRated[0].image} className="card-img-top" alt="..." /> */}
           {topShows.map((item) => (
-            <div key={item} className={`card ${styles.card}`}>
+            <div key={item} className={`card ${styles.card}`} onClick={() => download(item.title)}>
               <img src={item.image} loading="lazy" className="card-img-top" alt="..." />
               <div className="card-body">
                 <p className={`card-text ${styles.cardtext}`}>{item.title}</p>

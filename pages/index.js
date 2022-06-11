@@ -41,7 +41,7 @@ export default function Home() {
     <>
     <CustomCursor
           component={"cursor.png"}
-          isDisabled={device}
+          isDisabled={true}
           width={50}
           height={50}
           zIndex={420}

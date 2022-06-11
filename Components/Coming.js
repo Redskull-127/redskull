@@ -8,7 +8,7 @@ export default function Coming() {
       fetchData();
     }, []);
     function fetchData() {
-      fetch("https://imdb-api.com/en/API/ComingSoon/k_aqil82o5")
+      fetch("https://imdb-api.com/en/API/ComingSoon/k_14badqbb")
         .then((response) => response.json())
         .then((data) => {
           console.log(data.items[0].title);
@@ -18,6 +18,9 @@ export default function Coming() {
           console.log(error);
         });
     }
+    function download(name) {
+      console.log(name.split(" ").join("+"));
+    }
     if (Coming.length > 0) {
       return (
         <div className={styles.Coming} data-aos="fade-up">
@@ -25,7 +28,7 @@ export default function Coming() {
           <div className={styles.container} data-aos="fade-up">
             {/* <img src={Coming[0].image} className="card-img-top" alt="..." /> */}
             {Coming.map((item) => (
-              <div key={item} className={`card ${styles.card}`}>
+              <div key={item} className={`card ${styles.card}`} onClick={() => download(item.title)}>
                 <img src={item.image} loading="lazy" className="card-img-top" alt="..." />
                 <div className="card-body">
                   <p className={`card-text ${styles.cardtext}`}>{item.title}</p>
