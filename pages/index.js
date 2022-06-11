@@ -11,10 +11,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import React, { useEffect, useState, Component } from "react";
 import * as Scroll from "react-scroll";
-import {
-  Link,
-  animateScroll as scroll,
-} from "react-scroll";
+import { Link, animateScroll as scroll } from "react-scroll";
 import { CustomCursor } from "react-svg-cursor";
 
 export default function Home() {
@@ -39,14 +36,14 @@ export default function Home() {
 
   return (
     <>
-    <CustomCursor
-          component={"cursor.png"}
-          isDisabled={true}
-          width={50}
-          height={50}
-          zIndex={420}
-          transform="translate(-28%, -10%) rotateZ(0deg)"
-        />
+      <CustomCursor
+        component={"cursor.png"}
+        isDisabled={true}
+        width={50}
+        height={50}
+        zIndex={420}
+        transform="translate(-28%, -10%) rotateZ(0deg)"
+      />
       <div className={styles.preloader} id="preloader">
         <img src="lottlemovie.gif" />
         <h1>Waiting for Data...</h1>
@@ -94,6 +91,11 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5854213705609546"
+          crossOrigin="anonymous"
+        ></Script>
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
