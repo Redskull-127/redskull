@@ -27,11 +27,30 @@
 }
 
 .Coming .container .card {
+  cursor: pointer;
   margin-bottom: 20px;
   height: 17em;
   background-color: black;
   width: 14rem;
   text-align: center;
+  transition: 0.5s;
+}
+
+.Coming .container .card:hover{
+  transform: scale(1.1);
+}
+
+.Coming .container .card .description {
+  background-color: rgba(0, 0, 0, 0.541);
+  position: absolute;
+  display: none;
+  text-align: center;
+}
+
+.Coming .container .card .description p {
+  margin-top: 20px;
+  font-size: 12px;
+  color: antiquewhite;
 }
 
 .Coming .container .card p {

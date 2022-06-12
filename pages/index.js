@@ -21,7 +21,7 @@ export default function Home() {
     Aos.init({ duration: 1500 });
     setInterval(() => {
       setLoader(false);
-    }, 7000);
+    }, 5000);
     var userAgent = navigator.userAgent.toLowerCase();
     var Android = userAgent.indexOf("android") > -1;
     if (Android) {
@@ -87,7 +87,7 @@ export default function Home() {
               smooth={true}
               duration={500}
             >
-              <span>In Theaters</span>
+              <span>Trending</span>
             </Link>
           </div>
         </div>
@@ -119,22 +119,24 @@ export default function Home() {
           />
         </Head>
 
+        <div className={styles.grids}>
         <Header />
+        <div id="intheater">
+          <InTheaters />
+        </div>
         <div id="popularscroll">
           <Popular />
         </div>
         <div id="coming">
           <Coming />
         </div>
-        <div id="intheater">
-          <InTheaters />
-        </div>
         <div id="TopRated">
           <TopRated />
         </div>
-        {/* <main className={styles.main}>
-        </main> */}
+        </div>
       </div>
     </>
   );
 }
+{/* <main className={styles.main}>
+</main> */}
